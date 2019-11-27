@@ -1,5 +1,5 @@
 {
-  "name": "padron_telefonico",
+  "name": "padron_telefonico_mexico",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "keywords": [],
   "author": "Daniel_Orio",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "json-query": "^2.2.2"
   }
