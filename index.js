@@ -19,7 +19,7 @@ const data = db.data
 //     data: db
 //   }).value
 // )
-
+ 
 function assignNIR(num) {
   num = num.toString()
   num = num.split('')
