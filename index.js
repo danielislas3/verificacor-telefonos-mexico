@@ -12,13 +12,6 @@ const data = db.data
  * si el NIR es de 3 digitos la serie es de 3
  *->EXTRA son los 4 digitos restantes y debes de estar en el rango de (NUMERACION_INICIAL + NUMERACION_FINAL)
  */
-
-//busqueda por estado
-// console.log(
-//   jsonQuery('data[**][*ESTADO=JAL]', {
-//     data: db
-//   }).value
-// )
  
 function assignNIR(num) {
   num = num.toString()
@@ -67,13 +60,18 @@ function assingEXTRA(num){
 
 function find(num){
   const nir =assignNIR(num)
+  const serie =assignSERIE(num)
 
-  const nirs = jsonQuery(`data[**][*NIR=${nir}]`, {
+  const nirs = {data:jsonQuery(`data[**][*NIR=${nir}]`, {
     data: db
+  }).value  }
+
+  const series =jsonQuery(`data[**][*SERIE=${serie}]`, {
+    data: nirs
   }).value
-  //console.log(Object.keys(nirs))
-  console.log(nirs[0])
-  
+  console.log(series)
+  console.log(nir)
+  console.log(serie)
 }
 
-find(6628822793)
+find(55538822793)
