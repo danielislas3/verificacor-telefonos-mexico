@@ -65,7 +65,7 @@ function assingEXTRA(num) {
  * @param {String} num - The phone number
  * 
  */
-function find(phone) {
+module.exports = function findPhone(phone) {
   num = phone.toString()
   if (num.length != 10) return ({status:false, messge:'NUMERO INVALIDO'})
   const nir = assignNIR(num)
@@ -92,4 +92,3 @@ function find(phone) {
     return ({status:false, messge:'SERIE y/o NIRS invalidos'})
   }
 }
-console.log(find(5727763542))
