@@ -1,14 +1,26 @@
 {
   "name": "padron_telefonico_mexico",
   "version": "1.0.0",
-  "description": "",
+  "description": "Herramienta para verificar si un numero telefonico existe dentro de la base de datos del IFT ",
+  "tags": [
+    "json",
+    "mexico",
+    "telefonos",
+    "phone",
+    "cheker"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Daniel_Orio",
+  "author": "Daniel_Orio <danielislas3@live.com>",
   "license": "MIT",
+  "homepage":"https://github.com/danielislas3/verificacor-telefonos-mexico",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielislas3/verificacor-telefonos-mexico.git"
+  },
   "dependencies": {
     "json-query": "^2.2.2"
   }
