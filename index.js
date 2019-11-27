@@ -67,11 +67,13 @@ function assingEXTRA(num){
 
 function find(num){
   const nir =assignNIR(num)
-  console.log(
-  jsonQuery(`data[**][*NIR=${nir}]`, {
+
+  const nirs = jsonQuery(`data[**][*NIR=${nir}]`, {
     data: db
   }).value
-)
+  //console.log(Object.keys(nirs))
+  console.log(nirs[0])
+  
 }
 
 find(6628822793)
