@@ -1,6 +1,6 @@
 {
   "name": "padron_telefonico_mexico",
-  "version": "0.2",
+  "version": "0.1.3",
   "description": "Herramienta para verificar si un numero telefonico existe dentro de la base de datos del IFT ",
   "tags": [
     "json",
