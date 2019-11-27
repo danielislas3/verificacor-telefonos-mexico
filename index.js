@@ -57,11 +57,17 @@ function assingEXTRA(num){
   num = num.split('')
   return num[6]+num[7]+ num[8]+ num[9]
 }
-
-function find(num){
-  const nir =assignNIR(num)
-  const serie =assignSERIE(num)
-
+/**
+ * @param {String} num - The phone number
+ * 
+ */
+function find(phone){
+  num=phone.toString()
+  if(num.length!=10) return( 'NUMERO INVALIDO' ) 
+  const nir = assignNIR(num)
+  const serie = assignSERIE(num)
+  const extra = assingEXTRA(num)
+  
   const nirs = {data:jsonQuery(`data[**][*NIR=${nir}]`, {
     data: db
   }).value  }
@@ -69,9 +75,12 @@ function find(num){
   const series =jsonQuery(`data[**][*SERIE=${serie}]`, {
     data: nirs
   }).value
-  console.log(series)
-  console.log(nir)
-  console.log(serie)
+  
+  if(series[0]){
+    if(extra>series[0]['NUMERACION_INICIAL']&&extra<series[0]['NUMERACION_FINAL']){
+      return ('existe')
+    }else{return('no existe')}
+  } else{return('no existe')} 
 }
+console.log(find(5528822793))
 
-find(55538822793)
